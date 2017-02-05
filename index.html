@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/foundation.min.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="stylesheet" href="assets/css/page.css" />
+    <meta name="description" content="Laravel Voyager Cheat Sheet , Codes , function , methods of voyager admin panel">
+    <title>Voyager Cheat Sheet</title>
+</head>
+<body>
+
+<a href="#top" id="top-button" title="Top"><i class="icon-arrow-up"></i></a>
+<div class="fixed">
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name"><h1><a href="#">Voyager Cheat Sheet <small>v0.10.11</small></a></h1></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="right">
+                <li class="comments-toggle"><a href="#"><i class="icon-comments"></i> Toggle Code Comments</a></li>
+                <li><a href="http://github.com/ulties/voyager-cheatsheet" target="_blank"><i class="icon-github"></i> Github</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Documentation</a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="https://the-control-group.github.io/voyager/docs/" target="_blank"><i class="icon-file-text"></i> Voyager Docs</a>
+                        </li>
+                        <li>
+                            <a href="https://laravel.com/docs/" target="_blank"><i class="icon-file-text"></i> Laravel Docs</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </nav>
+</div>
+
+<a name="top" id="top-anchor"></a>
+
+<div class="row" id="search-box">
+    <div class="small-10 small-offset-1 large-6 large-offset-3 columns">
+        <div class="row collapse">
+            <div class="small-10 columns">
+                <input type="text" placeholder="Start typing to search..." id="search" name="search" />
+            </div>
+            <div class="small-2 columns">
+                <button class="button postfix" id="search-button"><i class="icon-search"></i></button>
+            </div>
+        </div>
+        <small id="searchHint">hint: keep tapping the search, it scrolls to the result</small>
+    </div>
+</div>
+
+<div class="row full-width">
+    <div class="large-4 columns code-column">
+
+
+        <h4><a name="artisan" href="#artisan">Artisan</a></h4>
+        <pre class="prettyprint lang-php">
+// Install Voyager
+php artisan voyager:install
+// Install Voyager with dummy data
+php artisan voyager:install --with-dummy
+// Make custom HTTP Voyager controllers
+php artisan voyager:controllers
+                </pre>
+
+        <h4><a name="menu" href="#menu">Menu</a> <a href="https://the-control-group.github.io/voyager/docs/v0.10/#core-concepts-menus" title="Menu @ Voyager Docs"><i class="icon-file-text"></i></a></h4>
+        <pre class="prettyprint lang-php">
+// Display the "main" menu
+Menu::display('main');
+// Display the "main" menu with the "bootstrap" style
+Menu::display('main', 'bootstrap');
+// Display the "main" menu with a custom style
+Menu::display('main', 'my_custom_menu_view_file');
+                </pre>
+
+        <h4><a name="setting" href="#setting">Setting</a></h4>
+        <pre class="prettyprint lang-php">
+// Get setting value of "site-title"
+Voyager::setting('site-title');
+// Get setting value of "site-title" with a default of "No Name"
+Voyager::setting('site-title', 'No Name');
+                </pre>
+
+    </div>
+
+    <div class="large-4 columns code-column">
+        <h4><a name="permission" href="#permission">Permission</a></h4>
+        <pre class="prettyprint lang-php">
+// Check if user have permission "visit-admin"
+if ($user->hasPermission('visit-admin')) {}
+// Check if user have permission and throw exception if now
+Voyager::can('visit-admin');
+                </pre>
+
+        <h4><a name="rules" href="#rules">Validation Rules</a> <a href="https://laravel.com/docs/5.4/validation#available-validation-rules" title="Available Validation Rules @ Laravel Docs"><i class="icon-file-text"></i></a></h4>
+        <pre class="prettyprint lang-php">
+accepted
+active_url
+after:YYYY-MM-DD
+before:YYYY-MM-DD
+alpha
+alpha_dash
+alpha_num
+array
+between:1,10
+confirmed
+date
+date_format:YYYY-MM-DD
+different:fieldname
+digits:value
+digits_between:min,max
+boolean
+email
+exists:table,column
+image
+in:foo,bar,...
+not_in:foo,bar,...
+integer
+numeric
+ip
+max:value
+min:value
+mimes:jpeg,png
+regex:[0-9]
+required
+required_if:field,value
+required_with:foo,bar,...
+required_with_all:foo,bar,...
+required_without:foo,bar,...
+required_without_all:foo,bar,...
+sometimes|required|field
+same:field
+size:value
+timezone
+unique:table,column,except,idColumn
+url
+                </pre>
+
+    </div>
+    <div class="large-4 columnsi code-column">
+        <h4><a name="bread-types" href="#bread-types">BREAD  Types</a> <a href="http://laravel.com/docs/responses#views" title="Views @ Laravel Docs"><i class="icon-file-text"></i></a></h4>
+        <pre class="prettyprint lang-php">
+// A text box where you can type whatever
+Text Box
+// A multi-line text area (without a text editor)
+Text Area
+// A multi-line text area (with a text editor)
+Rich Textbox
+// A input field with hidden input
+Password
+// A hidden input field
+Hidden
+// A check box
+Check Box
+// A radio button
+Radio Button
+// A select dropdown without multi-selection
+Select Dropdown
+// A select dropdown with multi-selection
+Multiple Select
+// A file upload
+File
+// A file upload that only accept images
+Image
+// A input field that only accept a date
+Date
+// A input field that only accept numbers
+Number
+                </pre>
+    </div>
+
+</div>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery.highlight-4.js"></script>
+<script src="assets/js/foundation.min.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
