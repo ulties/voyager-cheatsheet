@@ -79,12 +79,24 @@ Menu::display('main', 'bootstrap');
 Menu::display('main', 'my_custom_menu_view_file');
                 </pre>
 
-        <h4><a name="setting" href="#setting">Setting</a></h4>
+        <h4><a name="setting" href="#setting">Built-in Settings</a></h4>
         <pre class="prettyprint lang-php">
-// Get setting value of "site-title"
-Voyager::setting('site-title');
-// Get setting value of "site-title" with a default of "No Name"
-Voyager::setting('site-title', 'No Name');
+// Get setting value of "Site's Title"
+Voyager::setting('title');
+// Get setting value of "Site's Title" with a default of "No Name"
+Voyager::setting('title', 'No Name');
+// Get the setting admin_icon_image(Icon used on the main login page and the top of sidebar)
+Voyager::setting('admin_icon_image');
+// Get the admin_bg_image setting which is used in the login page of the admin panel
+Voyager::setting('admin_bg_image');
+// Get the google_analytics_client_id which is used in the dashboard page.
+Voyager::setting("google_analytics_client_id");
+// Get the setting admin_title which is used in the &lt;title&gt; tag of the admin panel
+Voyager::setting('admin_title');
+// Get the setting admin_description which is used in the &lt;title&gt; tag of the admin panale
+Voyager::setting('admin_description');
+// Get the setting admin_loader which is used as a loader throughout the admin panel(Get creative with gifs here)
+Voyager::setting('admin_loader');
                 </pre>
 
     </div>
