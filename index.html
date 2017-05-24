@@ -98,6 +98,13 @@ Voyager::setting('admin_description');
 // Get the setting admin_loader which is used as a loader throughout the admin panel(Get creative with gifs here)
 Voyager::setting('admin_loader');
                 </pre>
+        
+        
+                <h4><a name="checks" href="#checks">Built-in Checks</a></h4>
+        <pre class="prettyprint lang-php">
+// Check if user has permission, you can create custom BREAD for adding custom permissions, then you can check for them with this method.
+Voyager::canOrFail('permissionName');
+                </pre>
 
     </div>
 
