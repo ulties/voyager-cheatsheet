@@ -100,13 +100,6 @@ Voyager::setting('admin_description');
 // Get the setting admin_loader which is used as a loader throughout the admin panel(Get creative with gifs here)
 Voyager::setting('admin_loader');
                 </pre>
-        
-        
-                <h4><a name="checks" href="#checks">Built-in Checks</a></h4>
-        <pre class="prettyprint lang-php">
-// Check if user has permission, you can create custom BREAD for adding custom permissions, then you can check for them with this method.
-Voyager::canOrFail('permissionName');
-                </pre>
 
     </div>
 
@@ -117,6 +110,10 @@ Voyager::canOrFail('permissionName');
 if ($user->hasPermission('visit-admin')) {}
 // Check if user have permission and throw exception if not
 Voyager::can('visit-admin');
+// Check if user have permission or fail
+Voyager::canOrFail('visit-admin');
+// Check if user have permission or abort with status code
+Voyager::canOrAbort('visit-admin', 401);
                 </pre>
 
         <h4><a name="rules" href="#rules">Validation Rules</a> <a href="https://laravel.com/docs/5.4/validation#available-validation-rules" title="Available Validation Rules @ Laravel Docs"><i class="icon-file-text"></i></a></h4>
